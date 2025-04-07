@@ -181,7 +181,7 @@ export class BksSealedKeyEntry extends AbstractBksEntry {
         salt,
         iteration_count
       );
-      const key_entry = BksKeyStore._read_bks_key(
+      const [key_entry, _] = BksKeyStore._read_bks_key(
         decrypted,
         0,
         this.store_type

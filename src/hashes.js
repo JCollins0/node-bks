@@ -6,6 +6,8 @@ export function createHashAlgorithm(algorithm) {
     switch (algorithm) {
       case "sha1":
         return new SHA1();
+      case "sha256":
+        return new SHA256();
       default:
         throw new UnsupportedAlgorithmException(
           `Library Unsupported hash algorithm: ${algorithm}`
@@ -45,5 +47,10 @@ export class AbstractHashAlgorithm {
 export class SHA1 extends AbstractHashAlgorithm {
   constructor() {
     super("sha1", 64);
+  }
+}
+export class SHA256 extends AbstractHashAlgorithm {
+  constructor() {
+    super("sha256", 64);
   }
 }

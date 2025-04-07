@@ -3,7 +3,7 @@ import {
   BadPaddingException,
   BadHashCheckException,
   ValueError,
-} from "./errors";
+} from "./errors.js";
 /**
  * OID for JavaSoft proprietary key-protection algorithm.
  * @type {number[]}
@@ -22,7 +22,7 @@ export const SUN_JCE_ALGO_ID = [1, 3, 6, 1, 4, 1, 42, 2, 19, 1];
  * @param {string} str - The string to encode.
  * @returns {Buffer} A buffer representing the string in UTF-16BE encoding.
  */
-function encodeUtf16be(str) {
+export function encodeUtf16be(str) {
   const buffer = Buffer.from(str, "utf16le");
   return buffer.swap16();
 }
